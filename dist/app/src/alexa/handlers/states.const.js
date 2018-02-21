@@ -3,5 +3,6 @@
 module.exports = {
     NONE: '',
     DEPARTMENT: '_DEPARTMENT',
-    NAME: '_NAME'
+    NAME: '_NAME',
+    SETTINGS: '_SETTINGS'
 };

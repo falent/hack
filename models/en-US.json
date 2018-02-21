@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "my fitness coach",
+      "invocationName": "myfitnesscoach",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
@@ -12,8 +12,29 @@
           "samples": []
         },
         {
+          "name": "AMAZON.YesIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
+        },
+        {
           "name": "AMAZON.StopIntent",
           "samples": []
+        },
+        {
+          "name": "SaveExerciseIntent",
+          "samples": [
+            "I want to do {exercise_name}"
+          ],
+          "slots": [
+            {
+              "name": "exercise_name",
+              "type": "EXCERCISE_NAMES",
+              "samples": []
+            }
+          ]
         },
         {
           "name": "FindDepartmentIntent",
@@ -42,8 +63,10 @@
             }
           ]
         },
-
-
+        {
+          "name": "QuestionExerciseIntent",
+          "samples": []
+        },
 
         {
           "name": "ContactIntent",
@@ -68,7 +91,25 @@
               }
             }
           ]
+        },
+        {
+          "name": "EXCERCISE_NAMES",
+          "values": [
+            {
+              "name": {
+                "value": "biceps"
+              }
+            },
+            {
+              "name": {
+                "value": "triceps"
+              }
+            }
+          ]
         }
+
+
+
       ]
     }
   }

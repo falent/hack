@@ -4,34 +4,27 @@ const States = require('./states.const');
 const SpeechOutputUtils = require('../utils/speech-output.utils');
 var User = require('../models/user');
 
-module.exports = Alexa.CreateStateHandler(States.NAME, {
+module.exports = Alexa.CreateStateHandler(States.SETTINGS, {
 
-    'NameIntent': function() {
+    'QuestionExerciseIntent': function() {
 
-        var myName = this.event.request.intent.slots.my_name.value;
-        var userID = this.event.session.user.userId;
-
-        console.log(userID);
-
-
-        User.findOneAndUpdate(
-            {userId: userID},
-            {$set: {name: myName}},
-            {upsert: true, new: true, runValidators: true},
-
-            function (err, doc) {
-
-                if (err) {
-                    console.log("Something wrong when updating data!");
-                }
-                console.log(doc);
-
-            });
-
+        console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+        console.log(this.attributes['Name']);
+        console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
         this.attributes['Name'] = myName;
+        this.response.speak("What do you like to do firstly?!")
+            .listen("Im waiting!");
 
-        this.response.speak("Nice, "+myName+" Nice to see you! Do you want to save your first exercise?")
-            .listen("Do you want to save your first exercise?");
+        this.emit(':responseReady');
+    },
+
+    // Unhandled Intent:
+
+    'SaveExerciseIntent': function () {
+        var myExercise = this.event.request.intent.slots.my_exercise.value;
+
+        this.response.speak("Wow!")
+            .listen("Im waiting!");
 
         this.emit(':responseReady');
     },
@@ -58,7 +51,7 @@ module.exports = Alexa.CreateStateHandler(States.NAME, {
 
     'AMAZON.YesIntent': function() {
     this.handler.state = States.SETTINGS;
-    this.emit('QuestionExerciseIntent');
+    this.emit('SaveExerciseIntent');
     },
 
     'AMAZON.StopIntent': function () {

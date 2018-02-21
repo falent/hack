@@ -11,7 +11,7 @@
 					"keywords": [
 						"Opitz"
 					],
-					"name": "oc Baumarkt",
+					"name": "my fitness coach",
 					"description": "Alexa Hackathon at Opitz Consulting 2018"
 				}
 			},
@@ -23,13 +23,13 @@
 		"apis": {
 			"custom": {
 				"endpoint": {
-					"uri": "https://817ecd95.ngrok.io",
+					"uri": "https://8e37c89b.ngrok.io",
 					"sslCertificateType": "Wildcard"
 				},
 				"regions": {
 					"EU": {
 						"endpoint": {
-							"uri": "https://817ecd95.ngrok.io",
+							"uri": "https://8e37c89b.ngrok.io",
 							"sslCertificateType": "Wildcard"
 						}
 					}

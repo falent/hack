@@ -5,13 +5,15 @@ const Alexa = require("alexa-sdk");
 
 const SpeechOutput = require('./alexa/resources/speech-output');
 const NameHandlers =  require('./alexa/handlers/name.handlers');
+const SettingsHandlers =  require('./alexa/handlers/settings.handlers');
 const newSessionHandlers = require('./alexa/handlers/newSession.handlers');
 const departamentHandlers = require('./alexa/handlers/department.handlers');
 
 var allHandlers = [
 	newSessionHandlers,
     departamentHandlers,
-    NameHandlers
+    NameHandlers,
+    SettingsHandlers
 
 ];
 
