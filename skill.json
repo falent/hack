@@ -1,0 +1,49 @@
+{
+	"manifest": {
+		"publishingInformation": {
+			"locales": {
+				"en-US": {
+					"summary": "Alexa1 Skill Hackathon",
+					"examplePhrases": [
+						"Alexa, open my fitness coach ",
+						"Alexa, start  my fitness coach"
+					],
+					"keywords": [
+						"Opitz"
+					],
+					"name": "oc Baumarkt",
+					"description": "Alexa Hackathon at Opitz Consulting 2018"
+				}
+			},
+			"isAvailableWorldwide": true,
+			"testingInstructions": "Include your testing instruction (if any) here",
+			"category": "KNOWLEDGE_AND_TRIVIA",
+			"distributionCountries": []
+		},
+		"apis": {
+			"custom": {
+				"endpoint": {
+					"uri": "https://817ecd95.ngrok.io",
+					"sslCertificateType": "Wildcard"
+				},
+				"regions": {
+					"EU": {
+						"endpoint": {
+							"uri": "https://817ecd95.ngrok.io",
+							"sslCertificateType": "Wildcard"
+						}
+					}
+				}
+			}
+		},
+		"manifestVersion": "1.0",
+		"permissions": [],
+		"privacyAndCompliance": {
+			"allowsPurchases": false,
+			"isExportCompliant": true,
+			"containsAds": false,
+			"isChildDirected": false,
+			"usesPersonalInfo": false
+		}
+	}
+}
