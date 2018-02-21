@@ -31,12 +31,12 @@
         {
           "name": "NameIntent",
           "samples": [
-            "My Name is {name}",
-            "{name}"
+            "My Name is {my_name}",
+            "{my_name}"
           ],
           "slots": [
             {
-              "name": "name",
+              "name": "my_name",
               "type": "AMAZON.US_FIRST_NAME",
               "samples": []
             }

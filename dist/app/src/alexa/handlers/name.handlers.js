@@ -2,18 +2,50 @@
 const Alexa = require('alexa-sdk');
 const States = require('./states.const');
 const SpeechOutputUtils = require('../utils/speech-output.utils');
-
+var User = require('../models/user');
 
 module.exports = Alexa.CreateStateHandler(States.NAME, {
 
-    'FindDepartmentIntent': function() {
-        var myName = this.event.request.intent.slots.name.value;
-        
-        this.response.speak(SpeechOutputUtils.pickRandom(this.t('DEPARTAMENT', myDepartment)))
-        .listen();
-        
-        this.emit(':responseReady');
-    },
+    'NameIntent': function() {
+
+        var myName = this.event.request.intent.slots.my_name.value;
+        var userID = this.event.session.user.userId;
+
+        console.log(userID);
+
+
+
+
+
+        User.findOneAndUpdate(
+
+            {userId:  userID},
+
+            {$set:{name:myName}},
+
+            {upsert: true, new: true, runValidators: true},
+
+            function(err, doc){
+
+                if(err){
+
+                    console.log("Something wrong when updating data!");
+
+                }
+
+
+
+                console.log(doc);
+
+            });
+
+
+
+
+
+
+        this.emit(':tell', "Hi "+myName);
+
 
     // Unhandled Intent:
 
